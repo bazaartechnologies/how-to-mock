@@ -15,6 +15,3 @@
     - Use Kotlin object in Kotlin
     - Use Java object in Kotlin
 * Mock vs Spy
-
-* MORE in Test
-- Parameterized Test
