@@ -10,4 +10,26 @@ public class OrderEntityJv {
         this.orderNumber = orderNumber;
         this.itemCount = itemCount;
     }
+
+    public void setItemCount(Integer itemCount) {
+        this.itemCount = itemCount;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public String getOrderNumber() {
+        return orderNumber;
+    }
+
+    public Integer getItemCount() {
+        return itemCount;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        OrderEntityJv obj1 = (OrderEntityJv) obj;
+        return obj1.itemCount.equals(this.itemCount) || obj1.orderId.equals(this.orderId) || obj1.orderNumber.equals(this.orderNumber);
+    }
 }

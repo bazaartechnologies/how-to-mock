@@ -19,6 +19,6 @@ public class OrderRepositoryJv {
 
     public Integer saveOrderEntityJv(OrderEntityJv orderEntityJv)
     {
-        return 0;
+        return 1000;
     }
 }
