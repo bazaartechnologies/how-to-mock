@@ -11,6 +11,7 @@
 * By reference vs By Value
 * How data class is helpful
 * When to use captor
+  * captor old, captor kotlin, argThat
 * Java to Kotlin interoperability
     - Use Kotlin object in Kotlin
     - Use Java object in Kotlin
