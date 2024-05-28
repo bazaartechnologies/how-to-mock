@@ -1,5 +1,7 @@
 package howtomock.java;
 
+import kotlin.random.Random;
+
 public class OrderServiceJv {
     private OrderRepositoryJv orderRepositoryJv;
 
@@ -23,6 +25,15 @@ public class OrderServiceJv {
     public Integer saveSomethingThatIsCreateNewInstanceWithSameData(OrderEntityJv orderEntityJv) {
         return orderRepositoryJv.saveOrderEntityJv(new OrderEntityJv(
                 orderEntityJv.getOrderId(), orderEntityJv.getOrderNumber(), orderEntityJv.getItemCount()
+        ));
+    }
+
+    public Integer saveSomethingWithNewInstance(String orderId, String orderNumber) {
+
+        Integer itemCount = Random.Default.nextInt(0, 100);
+
+        return orderRepositoryJv.saveOrderEntityJv(new OrderEntityJv(
+                orderId, orderNumber, itemCount
         ));
     }
 }

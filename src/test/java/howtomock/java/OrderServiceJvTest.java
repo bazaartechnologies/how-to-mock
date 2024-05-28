@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -24,6 +25,7 @@ class OrderServiceJvTest {
     void setup() {
         orderServiceJv = new OrderServiceJv(orderRepositoryJv);
     }
+
     @Test
     void task_3() {
         // stubbing
@@ -125,6 +127,20 @@ class OrderServiceJvTest {
 
     @Test
     void test_7c() {
+        // Action
+        orderServiceJv.saveSomethingWithNewInstance("order-id", "order-number");
+        ArgumentCaptor<OrderEntityJv> orderCaptor = ArgumentCaptor.forClass(OrderEntityJv.class);
+
+        verify(orderRepositoryJv).saveOrderEntityJv(orderCaptor.capture());
+
+        OrderEntityJv capturedParam = orderCaptor.getValue();
+
+        Assertions.assertEquals("order-id", capturedParam.getOrderId());
+        Assertions.assertEquals("order-number", capturedParam.getOrderNumber());
+        Integer itemCount = capturedParam.getItemCount();
+        Assertions.assertTrue(
+                (itemCount >= 0) && (itemCount <= 100)
+        );
 
     }
 }

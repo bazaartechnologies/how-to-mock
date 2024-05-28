@@ -1,5 +1,7 @@
 package howtomock.java;
 
+import java.util.Objects;
+
 public class OrderEntityJv {
     private String orderId;
     private String orderNumber;
@@ -30,6 +32,6 @@ public class OrderEntityJv {
     @Override
     public boolean equals(Object obj) {
         OrderEntityJv obj1 = (OrderEntityJv) obj;
-        return obj1.itemCount.equals(this.itemCount) || obj1.orderId.equals(this.orderId) || obj1.orderNumber.equals(this.orderNumber);
+        return (Objects.equals(obj1.itemCount, this.itemCount)) && (obj1.orderId.equals(this.orderId)) && (obj1.orderNumber.equals(this.orderNumber));
     }
 }
