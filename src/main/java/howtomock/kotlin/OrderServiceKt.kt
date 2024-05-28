@@ -54,14 +54,9 @@ class OrderServiceKt(private val orderRepositoryKt: OrderRepositoryKt) {
         )
     }
 
-    fun saveSomethingIfOrderIdIsNotEmpty(orderId: String, orderNumber: String, itemCount: Int): Int {
-        if (orderId.isEmpty()) return -1;
+    fun saveSomethingIfOrderIdIsNotEmpty(orderId: String) {
+        if (orderId.isEmpty()) return
 
-        val orderEntityKt = OrderEntityKt(
-            orderId, orderNumber, itemCount
-        )
-        return orderRepositoryKt.saveOrderEntityKt(
-            orderEntityKt
-        )
+        orderRepositoryKt.saveOrderId(orderId)
     }
 }

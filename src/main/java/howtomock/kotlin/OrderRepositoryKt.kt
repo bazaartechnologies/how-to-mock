@@ -4,9 +4,10 @@ import howtomock.java.OrderEntityJv
 import java.net.NetworkInterface
 
 class OrderRepositoryKt(private val networkInterface: NetworkInterface) {
-    fun getOrderEntityKt(): OrderEntityKt = OrderEntityKt(
-        "order-id-x", "order-number-x", 3
-    )
+
+    fun saveOrderId(orderId: String): String {
+        return orderId
+    }
 
     fun saveOrderEntityKt(orderEntityKt: OrderEntityKt): Int {
         return 1000

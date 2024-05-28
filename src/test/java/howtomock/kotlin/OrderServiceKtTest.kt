@@ -26,7 +26,7 @@ internal class OrderServiceKtTest {
     // When to use any()
     @Test
     fun whenToUseAny() {
-        orderServiceKt.saveSomethingIfOrderIdIsNotEmpty("", "xyz", 10)
+        orderServiceKt.saveSomethingIfOrderIdIsNotEmpty("")
 
         verify(orderRepositoryKt, never()).saveOrderEntityKt(any())
     }
