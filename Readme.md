@@ -6,8 +6,8 @@
 3. Action
 4. Verification
 5. Assertion
-6. Captor
-7. When to use verify and when to use Assertion
+6. When to use verify and when to use Assertion
+7. Captor
 8. When to use captor
 9. By reference vs By Value
 10. How data class is helpful
