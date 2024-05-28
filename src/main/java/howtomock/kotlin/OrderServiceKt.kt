@@ -4,9 +4,6 @@ import howtomock.java.OrderEntityJv
 import kotlin.random.Random.Default.nextInt
 
 class OrderServiceKt(private val orderRepositoryKt: OrderRepositoryKt) {
-    fun fetchOrderEntityKt(): OrderEntityKt {
-        return orderRepositoryKt.getOrderEntityKt()
-    }
 
     fun saveSomething(orderEntityKt: OrderEntityKt): Int {
         return orderRepositoryKt.saveOrderEntityKt(orderEntityKt)

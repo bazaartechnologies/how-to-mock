@@ -32,18 +32,9 @@ internal class OrderServiceKtTest {
     }
 
     // Task 6
-    @Test
-    fun test_6a() {
-        val orderEntityKt = OrderEntityKt("order", "orderNumber", 3)
-        whenever(orderRepositoryKt.saveOrderEntityKt(orderEntityKt)).thenReturn(100)
-
-        // Action
-        val integer = orderServiceKt.saveSomething(orderEntityKt)
-        Assertions.assertEquals(100, integer)
-    }
 
     @Test
-    fun test_6b() {
+    fun test_6() {
         val orderEntityKt = OrderEntityKt("order", "orderNumber", 3)
 
         // Action
