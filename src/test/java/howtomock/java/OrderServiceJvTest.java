@@ -1,15 +1,12 @@
-package howtomock.one;
+package howtomock.java;
 
 
-import howtomock.java.OrderRepositoryJv;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.never;
+import static org.junit.jupiter.api.Assertions.*;
 
 class OrderServiceJvTest {
     @Mock
@@ -21,8 +18,8 @@ class OrderServiceJvTest {
     }
 
     @Test
-    void test() {
-        Assertions.assertTrue(true);
-        verify(orderRepositoryJv, never()).getOrderEntityJv();
+    void make_repository_to_return_order_entity() {
+        OrderEntityJv orderEntityJv = orderRepositoryJv.getOrderEntityJv();
+        assertNotNull(orderEntityJv);
     }
 }
